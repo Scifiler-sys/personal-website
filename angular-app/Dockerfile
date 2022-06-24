@@ -1,4 +1,4 @@
-#Building app
+#Building app.
 FROM node:latest as build
 WORKDIR /app
 
