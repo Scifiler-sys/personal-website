@@ -16,4 +16,6 @@ workdir /app
 
 copy --from=build /app/publish ./
 
+env ASPNETCORE_URLS=http://+:$PORT
+
 cmd ["dotnet", "api.dll"]
