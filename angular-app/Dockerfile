@@ -20,4 +20,4 @@ RUN rm /etc/nginx/conf.d/default.conf
 # replace with custom one
 COPY ./nginx.conf /etc/nginx/conf.d
 
-CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/nginx.conf && nginx -d 'deamon off;'
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/nginx.conf && nginx -g 'deamon off;'
