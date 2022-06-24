@@ -1,4 +1,4 @@
 build:
   docker:
     web: angular-app/Dockerfile
-    backend: backend/Dockerfile
+    worker: backend/Dockerfile
