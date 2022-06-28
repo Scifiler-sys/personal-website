@@ -1,14 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {  RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-
-const routes: Routes = [
-  {path:"", component:AppComponent}
-];
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +12,9 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  exports: [RouterModule]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

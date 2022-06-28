@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Biotif-Regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: rgb(254, 250, 246);
+    color: rgb(35, 35, 32);
+    /* Temporary size height */
+    height: 100rem;
+}
