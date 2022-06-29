@@ -26,6 +26,19 @@
     cursor: pointer;
     text-align: center;
     font-size: 17.6px;
+
+    /* Setting up underline animation */
+    text-decoration: underline;
+    text-decoration-thickness: 0.15em;
+    text-decoration-color: rgba(0, 0, 0, 0);
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 300ms, text-underline-offset 300ms;
+}
+
+/* Put it only on text items */
+.item:hover{
+    text-decoration-color: rgba(79, 178, 134, 1);
+    text-underline-offset: 0.4em;
 }
 
 .item:nth-of-type(4) {
@@ -33,7 +46,32 @@
     cursor: unset;
 }
 
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
 img{
     flex:2;
-    width:30px
+    width:28px;
+}
+
+/* Animation */
+@keyframes hoverButton {
+    from {
+        background-color: #ccc;
+        scale: 0;
+    }
+    to {
+        background-color: blue;
+        scale: 1;
+    }
 }
