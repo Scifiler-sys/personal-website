@@ -7,3 +7,26 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 25px;
 }
+
+.btn {
+    background-color: #7699D4;
+    border-color: #7699D4;
+    border-style: solid;
+    border-radius: 25px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: inherit;
+    font-family: inherit;
+
+    cursor: pointer;
+}
+
+
+
+.form-control {
+    margin:5%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    border: 1px #ccc solid;
+}
