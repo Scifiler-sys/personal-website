@@ -19,6 +19,12 @@
     font-family: inherit;
 
     cursor: pointer;
+
+    transition: scale 300ms;
+}
+
+.btn:hover {
+    scale: 1.3;
 }
 
 
