@@ -39,7 +39,7 @@
 
 /* Put it only on text items */
 .item:hover{
-    text-decoration-color: rgba(79, 178, 134, 1);
+    text-decoration-color: #7699D4;
     text-underline-offset: 0.4em;
 }
 
