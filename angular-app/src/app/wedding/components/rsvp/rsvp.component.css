@@ -1,0 +1,9 @@
+.body {
+    width: 50%;
+    margin:auto;
+    margin-top: 20px;
+    padding: 5%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 25px;
+}
