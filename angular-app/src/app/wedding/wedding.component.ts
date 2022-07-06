@@ -1,10 +1,9 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-wedding',
   templateUrl: './wedding.component.html',
   styleUrls: ['./wedding.component.css']
-  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WeddingComponent implements OnInit, AfterViewInit {
 
@@ -33,10 +32,6 @@ export class WeddingComponent implements OnInit, AfterViewInit {
         this.currentImage = `../../assets/Wedding/00${currentPhotoNumber}.JPG`
       }
     }
-
-  getYPosition(e: Event) : number{
-    return (e.target as Element).scrollTop;
-  }
 
   constructor() {
     // Resets view back to the very top
