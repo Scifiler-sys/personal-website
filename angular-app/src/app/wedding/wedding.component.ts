@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-wedding',
@@ -6,11 +6,13 @@ import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angul
   styleUrls: ['./wedding.component.css']
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WeddingComponent implements OnInit {
+export class WeddingComponent implements OnInit, AfterViewInit {
 
   currentImage = "../../assets/Wedding/001.JPG";
   // Will add in 500px div after scrolling is done
   isFixed:boolean = true;
+  // Will show loader until loaded
+  isLoaded:boolean = true;
 
 
   @HostListener("window:scroll", ["$event"]) 
@@ -37,11 +39,15 @@ export class WeddingComponent implements OnInit {
   }
 
   constructor() {
+    // Resets view back to the very top
     window.scroll({
       top:0
     })
+  }
 
-   }
+  ngAfterViewInit(): void {
+    this.isLoaded = false;
+  }
 
   ngOnInit(): void {
   }
