@@ -1,4 +1,4 @@
-<div *ngIf="!isFixed" style="height: 700px; width: auto;"></div>
+<div *ngIf="!isFixed" style="height: 500px; width: auto;"></div>
 <div (scroll)="onScroll($event)" [ngClass]="{'fixed':isFixed}">
     <img [src]="currentImage">
     <app-rsvp></app-rsvp>

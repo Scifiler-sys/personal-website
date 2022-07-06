@@ -19,14 +19,14 @@ export class WeddingComponent implements OnInit {
       let scrollHeight = $event.srcElement.scrollingElement.scrollTop
       console.log(scrollHeight);
 
-      if (scrollHeight > 700) {
+      if (scrollHeight > 500) {
         this.isFixed = false;
       }
       else
       {
         this.isFixed = true;
         //Will calculate what image to show after a certain px is hit
-        let currentPhotoNumber: number = Math.floor(scrollHeight / 100) < 1 ? 1 : Math.floor(scrollHeight / 100);
+        let currentPhotoNumber: number = Math.max(1,Math.round(scrollHeight / 100)+1);
         console.log(currentPhotoNumber)
         this.currentImage = `../../assets/Wedding/00${currentPhotoNumber}.JPG`
       }
