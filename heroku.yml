@@ -1,4 +1,3 @@
 build:
   docker:
     web: angular-app/Dockerfile
-    # worker: backend/Dockerfile
