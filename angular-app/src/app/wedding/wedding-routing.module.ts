@@ -6,10 +6,7 @@ import { WeddingComponent } from './wedding.component';
 const routes: Routes = [
   {
     path:"", 
-    component: WeddingComponent,
-    children: [
-      {path:"rsvp", component: RSVPComponent}
-    ]
+    component: WeddingComponent
   },
 ];
 

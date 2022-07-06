@@ -1,5 +1,6 @@
-<app-nav-bar></app-nav-bar>
-<br>
-<br>
-<br>
-<router-outlet></router-outlet>
+<div *ngIf="!isFixed" style="height: 700px;"></div>
+<div (scroll)="onScroll($event)" [ngClass]="{'fixed':isFixed}">
+    <img [src]="currentImage">
+    <app-rsvp></app-rsvp>
+    <router-outlet></router-outlet>
+</div>
