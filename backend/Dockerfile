@@ -16,4 +16,6 @@ workdir /app
 
 copy --from=build /app/publish ./
 
-cmd ["dotnet", "api.dll"]
+# cmd ["dotnet", "backend.dll"]
+
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet HerokuApp.dll
