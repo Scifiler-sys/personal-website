@@ -1,20 +1,15 @@
 <app-loading-spinner *ngIf="isLoaded"></app-loading-spinner>
-<div *ngIf="!isLoaded" [ngClass]="{'fixed':isFixed}">
-    <div *ngIf="!isFixed" style="height: 500px; width: auto;"></div>
+<div [ngClass]="{'fixed':isFixed}" [ngStyle]="{hidden:!isLoaded}">
+    <div *ngIf="!isFixed" style="height: 600px; width: auto;"></div>
     <h1>Title heading here</h1>
     <div (scroll)="onScroll($event)" >
-        <img [src]="currentImage">
+        <img src="../../assets//Wedding/001.JPG" [ngStyle]="{display:currentImage == 1 ? 'block':'none'}" (loaded)="imageLoaded()">
+        <img src="../../assets//Wedding/002.JPG" [ngStyle]="{display:currentImage == 2 ? 'block':'none'}" (loaded)="imageLoaded()">
+        <img src="../../assets//Wedding/003.JPG" [ngStyle]="{display:currentImage == 3 ? 'block':'none'}" (loaded)="imageLoaded()">
+        <img src="../../assets//Wedding/004.JPG" [ngStyle]="{display:currentImage == 4 ? 'block':'none'}" (loaded)="imageLoaded()">
+        <img src="../../assets//Wedding/005.JPG" [ngStyle]="{display:currentImage == 5 ? 'block':'none'}" (loaded)="imageLoaded()">
+        <img src="../../assets//Wedding/006.JPG" [ngStyle]="{display:currentImage == 6 ? 'block':'none'}" (loaded)="imageLoaded()">
         <app-rsvp></app-rsvp>
         <router-outlet></router-outlet>
     </div>
-</div>
-
-<!-- Explicitly loading the image -->
-<div hidden="true">
-    <img src="../../assets//Wedding/001.JPG" (loaded)="imageLoaded()">
-    <img src="../../assets//Wedding/002.JPG" (loaded)="imageLoaded()">
-    <img src="../../assets//Wedding/003.JPG" (loaded)="imageLoaded()">
-    <img src="../../assets//Wedding/004.JPG" (loaded)="imageLoaded()">
-    <img src="../../assets//Wedding/005.JPG" (loaded)="imageLoaded()">
-    <img src="../../assets//Wedding/006.JPG" (loaded)="imageLoaded()">
 </div>

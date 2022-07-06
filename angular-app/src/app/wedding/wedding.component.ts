@@ -7,7 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class WeddingComponent implements OnInit {
 
-  currentImage = "../../assets/Wedding/001.JPG";
+  currentImage: number = 1;
   // Will add in 500px div after scrolling is done
   isFixed: boolean = true;
   // Will show loader until loaded
@@ -18,23 +18,21 @@ export class WeddingComponent implements OnInit {
   //Listens to scroll event and change image based on scroll
   @HostListener("window:scroll", ["$event"])
   onScroll($event: any): void {
-    // console.log($event);
     let scrollHeight = $event.srcElement.scrollingElement.scrollTop;
 
-    if (scrollHeight > 500) {
+    if (scrollHeight > 600) {
       this.isFixed = false;
     }
     else {
       this.isFixed = true;
       //Will calculate what image to show after a certain px is hit
-      let currentPhotoNumber: number = Math.max(1, Math.round(scrollHeight / 100) + 1);
-      this.currentImage = `../../assets/Wedding/00${currentPhotoNumber}.JPG`
+      this.currentImage = Math.max(1, Math.floor(scrollHeight / 100) + 1);
+      console.log(this.currentImage);
     }
   }
 
   imageLoaded(){
     this.imageTotal +=1;
-    console.log(this.imageTotal);
 
     if (this.imageTotal == 6) {
       this.isLoaded = false;
