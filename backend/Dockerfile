@@ -2,7 +2,9 @@ from mcr.microsoft.com/dotnet/sdk:6.0 as build
 
 workdir /app
 
-copy /*.csproj ./
+copy *.sln ./
+copy API/*.csproj API/
+copy Model/*.csproj Model/
 
 run dotnet restore
 
@@ -16,6 +18,6 @@ workdir /app
 
 copy --from=build /app/publish ./
 
-# cmd ["dotnet", "backend.dll"]
+# cmd ["dotnet", "API.dll"]
 
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet backend.dll
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet API.dll
