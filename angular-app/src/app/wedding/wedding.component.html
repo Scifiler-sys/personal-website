@@ -1,14 +1,15 @@
 <app-loading-spinner *ngIf="isLoaded"></app-loading-spinner>
-<div *ngIf="!isLoaded">
+<div *ngIf="!isLoaded" [ngClass]="{'fixed':isFixed}">
     <div *ngIf="!isFixed" style="height: 500px; width: auto;"></div>
-    <div (scroll)="onScroll($event)" [ngClass]="{'fixed':isFixed}">
+    <h1>Title heading here</h1>
+    <div (scroll)="onScroll($event)" >
         <img [src]="currentImage">
         <app-rsvp></app-rsvp>
         <router-outlet></router-outlet>
     </div>
 </div>
 
-<!-- Explicitly loading the image first -->
+<!-- Explicitly loading the image -->
 <div hidden="true">
     <img src="../../assets//Wedding/001.JPG" (loaded)="imageLoaded()">
     <img src="../../assets//Wedding/002.JPG" (loaded)="imageLoaded()">
