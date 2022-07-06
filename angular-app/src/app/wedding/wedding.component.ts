@@ -27,7 +27,7 @@ export class WeddingComponent implements OnInit {
       this.isFixed = true;
       //Will calculate what image to show after a certain px is hit
       this.currentImage = Math.min(Math.max(1, Math.floor(scrollHeight / 100) + 1),6);
-      console.log(this.currentImage);
+      // console.log(this.currentImage);
     }
   }
 

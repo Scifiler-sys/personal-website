@@ -1,4 +1,4 @@
-<app-loading-spinner *ngIf="isLoaded"></app-loading-spinner>
+<app-loading-spinner *ngIf="isLoaded" [total]="imageTotal"></app-loading-spinner>
 <div [ngClass]="{'fixed':isFixed}" [ngStyle]="{'visibility':!isLoaded ? 'visible' : 'hidden'}">
     <div *ngIf="!isFixed" style="height: 600px; width: auto;"></div>
     <h1>Title heading here</h1>
