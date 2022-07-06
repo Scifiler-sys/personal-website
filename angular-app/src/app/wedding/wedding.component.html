@@ -1,9 +1,11 @@
 <app-loading-spinner *ngIf="isLoaded"></app-loading-spinner>
-<div *ngIf="!isFixed" style="height: 500px; width: auto;"></div>
-<div (scroll)="onScroll($event)" [ngClass]="{'fixed':isFixed}">
-    <img [src]="currentImage">
-    <app-rsvp></app-rsvp>
-    <router-outlet></router-outlet>
+<div *ngIf="!isLoaded">
+    <div *ngIf="!isFixed" style="height: 500px; width: auto;"></div>
+    <div (scroll)="onScroll($event)" [ngClass]="{'fixed':isFixed}">
+        <img [src]="currentImage">
+        <app-rsvp></app-rsvp>
+        <router-outlet></router-outlet>
+    </div>
 </div>
 
 <!-- Explicitly loading the image first -->
