@@ -6,6 +6,7 @@ import { WeddingComponent } from './wedding.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { RSVPComponent } from './components/rsvp/rsvp.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { ImageLoadedDirectiveDirective } from './components/directives/image-loaded-directive.directive';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
     WeddingComponent,
     NavBarComponent,
     RSVPComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    ImageLoadedDirectiveDirective
   ],
   imports: [
     CommonModule,
