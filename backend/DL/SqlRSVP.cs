@@ -38,6 +38,12 @@ namespace DL
                     .Include("Guests")
                     .ToList();
         }
+        public void Truncate()
+        {
+            _context.Database.ExecuteSqlRaw("TRUNCATE Table \"RSVPs\" RESTART IDENTITY CASCADE");
+
+            _context.SaveChanges();
+        }
 
         public RSVP Update(RSVP p_resource)
         {

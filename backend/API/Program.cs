@@ -41,6 +41,7 @@ var postgreConnectionString = new NpgsqlConnectionStringBuilder()
 
 builder.Services.AddDbContext<AppDBContext>(options => options.UseNpgsql(postgreConnectionString.ToString()));
 builder.Services.AddScoped<IRepository<RSVP>,SqlRSVP>();
+builder.Services.AddScoped<IRepository<Guest>, SqlGuest>();
 builder.Services.AddScoped<IRSVPBL, RSVPBL>();
 
 var app = builder.Build();

@@ -22,7 +22,15 @@ namespace API.Controller
         [HttpPost("Add")]
         public IActionResult AddRSVP([FromBody] RSVP p_rsvp)
         {
-            return Ok(_rsvpBL.Add(p_rsvp));
+            return Created("Successfully Added",_rsvpBL.Add(p_rsvp));
+        }
+
+        //REMOVE IN FINAL PRODUCTION!
+        [HttpDelete("RemoveAll")]
+        public IActionResult RemoveAll()
+        {
+            _rsvpBL.RemoveAll();
+            return Ok("Resources has been deleted");
         }
     }
 }

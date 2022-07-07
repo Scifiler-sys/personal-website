@@ -4,21 +4,29 @@ namespace BL
 {
     public class RSVPBL : IRSVPBL
     {
-        private readonly IRepository<RSVP> _repo;
+        private readonly IRepository<RSVP> _repoRSVP;
+        private readonly IRepository<Guest> _repoGuest;
 
-        public RSVPBL(IRepository<RSVP> repo)
+        public RSVPBL(IRepository<RSVP> repo, IRepository<Guest> repoGuest)
         {
-            _repo = repo;
+            _repoRSVP = repo;
+            _repoGuest = repoGuest;
         }
 
         public RSVP Add(RSVP p_entry)
         {
-            return _repo.Add(p_entry);
+            return _repoRSVP.Add(p_entry);
         }
 
         public List<RSVP> GetAll()
         {
-            return _repo.GetAll();
+            return _repoRSVP.GetAll();
+        }
+
+        public void RemoveAll()
+        {
+            _repoGuest.Truncate();
+            _repoRSVP.Truncate();
         }
     }
 }

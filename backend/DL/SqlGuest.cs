@@ -37,6 +37,13 @@ namespace DL
             return _context.Guests.ToList();
         }
 
+        public void Truncate()
+        {
+            _context.Database.ExecuteSqlRaw("TRUNCATE TABLE \"Guests\" RESTART IDENTITY");
+
+            _context.SaveChanges();
+        }
+
         public Guest Update(Guest p_resource)
         {
             _context.Guests.Update(p_resource);
