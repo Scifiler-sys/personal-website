@@ -1,0 +1,41 @@
+.form-control {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    margin-block: 2rem;
+}
+
+.form-main {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-control > * {
+    margin: 0.5rem;
+}
+
+.form-control > label {
+    font-size: 1.5rem;
+}
+
+.form {
+    border-color: rgb(211, 213, 214);
+    border-style: solid;
+    border-radius: 30px;
+    border-width: 1px;
+
+    padding-block: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    -webkit-transition: all 300ms;
+}
+
+.click {
+    
+}
+
+.form:focus {
+    outline-color: #7699D4;
+}

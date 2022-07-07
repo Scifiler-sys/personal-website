@@ -17,22 +17,7 @@
 
     <div *ngIf="showForm" class="fade-in">
         <!-- Thinking of putting this on another component entirely -->
-        <form>
-            <div>
-                <label>1. Will you be attending at our wedding?</label>
-                <div class="form-control">
-                    <input type="button" class="btn" value="Attending">
-                    <input type="button" class="btn" value="Not Attending">
-                </div>
-            </div>
-            <div>
-                <label for="">Are you a friend or family of?</label>
-            </div>
-            <div><label for="">Share how you know the couple, wish them well or some wisdom for the future!</label></div>
-            <div><label for="">Any plus one?</label></div>
-    
-            <h3>Confirmation to check and ready to submit the RSVP</h3>
-        </form>
+        <app-rsvp-form></app-rsvp-form>
     </div>
-
+    
 </div>

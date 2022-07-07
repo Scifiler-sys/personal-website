@@ -40,7 +40,7 @@ export class RSVPComponent implements OnInit, OnDestroy {
 
     setTimeout(() => {
       this.showForm = true;
-    }, 1500);
+    }, 1250);
   }
 
   ngOnDestroy(): void {
