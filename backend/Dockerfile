@@ -4,7 +4,10 @@ workdir /app
 
 copy *.sln ./
 copy API/*.csproj API/
+copy BL/*.csproj BL/
+copy DL/*.csproj DL/
 copy Model/*.csproj Model/
+copy unitTests/*.csproj unitTests/
 
 run dotnet restore
 
