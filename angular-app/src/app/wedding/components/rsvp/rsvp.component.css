@@ -42,7 +42,6 @@
     padding-bottom: 0.7rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    /* padding: 1rem; */
 }
 
 .btn:hover {
@@ -55,14 +54,8 @@
     flex-direction: column;
     display: flex;
     justify-content: space-between;
-    /* border: 1px #ccc solid; */
 
     
-}
-
-.form-control > .btn {
-    /* padding-top: 0.5rem;
-    padding-bottom: 0.5rem; */
 }
 
 .expand {
