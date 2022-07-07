@@ -10,6 +10,13 @@ export class RSVPComponent implements OnInit, OnDestroy {
 
   private sub?: Subscription;
   private weddingDate:Date = new Date("Dec 17 2022 00:00:00");
+
+  //Will show form after user clicks on button to start
+  showForm: boolean = false;
+  //Will expand downwards for form
+  expandBody: boolean = false;
+
+  test:number =30.3;
   
   //Time till wedding
   day = 0;
@@ -27,6 +34,14 @@ export class RSVPComponent implements OnInit, OnDestroy {
   }
 
   constructor() { }
+
+  handleShowButton(){
+    this.expandBody = true;
+
+    setTimeout(() => {
+      this.showForm = true;
+    }, 1500);
+  }
 
   ngOnDestroy(): void {
     this.sub?.unsubscribe();

@@ -31,6 +31,7 @@
     border-radius: 25px;
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-bottom: 1.2rem;
     font-size: inherit;
     font-family: inherit;
     color:white;
@@ -38,6 +39,9 @@
     cursor: pointer;
 
     transition: scale 300ms;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .btn:hover {
@@ -45,11 +49,58 @@
 }
 
 
-
 .form-control {
     margin:5%;
-    flex-direction: row;
+    flex-direction: column;
     display: flex;
     justify-content: space-between;
-    border: 1px #ccc solid;
+    /* border: 1px #ccc solid; */
+
+    
+}
+
+.form-control > .btn {
+    /* padding-top: 0.5rem;
+    padding-bottom: 0.5rem; */
+}
+
+.expand {
+    animation: expandDown 1.5s;
+}
+
+@keyframes expandDown {
+    from {
+        padding-bottom: 5%;
+    }
+
+    to {
+        padding-bottom: 300px;
+    }
+}
+
+.fade-in {
+    animation: fade-in 1.5s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fade-out 1.5s;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
