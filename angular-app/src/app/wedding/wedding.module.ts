@@ -8,6 +8,7 @@ import { RSVPComponent } from './components/rsvp/rsvp.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { ImageLoadedDirectiveDirective } from './components/directives/image-loaded-directive.directive';
 import { RsvpFormComponent } from './components/rsvp-form/rsvp-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { RsvpFormComponent } from './components/rsvp-form/rsvp-form.component';
   ],
   imports: [
     CommonModule,
-    WeddingRoutingModule
+    WeddingRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class WeddingModule { }
