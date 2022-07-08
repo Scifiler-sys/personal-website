@@ -4,9 +4,9 @@ body {
     background-color: rgb(254, 250, 246);
     color: rgb(35, 35, 32);
     /* Temporary size height */
-    height: 500rem;
+    height: 4000px;
     font-size: 17.6px;
-    margin: 0px;
+    margin:0px;
 }
 
 .btn {

@@ -10,7 +10,6 @@ import { ImageLoadedDirectiveDirective } from './components/directives/image-loa
 import { RsvpFormComponent } from './components/rsvp-form/rsvp-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     WeddingComponent,

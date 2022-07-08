@@ -19,6 +19,11 @@
     font-size: 1.5rem;
 }
 
+.form-control > span {
+    color: red;
+    font-size: 1rem;
+}
+
 .form {
     border-color: rgb(211, 213, 214);
     border-style: solid;
@@ -43,7 +48,9 @@
 
 .clicked{
     /* #c3d4f3 */
-    background-color: #B1C5E7;
+    background-color: #3B5E99;
+    border-color: #3B5E99;
+    transform: scale(1.1);
 }
 
 .form:focus {

@@ -24,13 +24,16 @@ export class WeddingComponent implements OnInit {
 
     if (scrollHeight > 600) {
       this.isFixed = false;
-      this.showTitle = true;
     }
     else {
       this.isFixed = true;
       //Will calculate what image to show after a certain px is hit
       this.currentImage = Math.min(Math.max(1, Math.floor(scrollHeight / 100) + 1),6);
       // console.log(this.currentImage);
+    }
+
+    if (scrollHeight > 400) {
+      this.showTitle = true;
     }
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
@@ -15,8 +15,8 @@ export class RSVPComponent implements OnInit, OnDestroy {
   showForm: boolean = false;
   //Will expand downwards for form
   expandBody: boolean = false;
-
-  test:number =30.3;
+  //Will pull form upwards
+  upwardForm: boolean = false;
   
   //Time till wedding
   day = 0;
@@ -41,6 +41,19 @@ export class RSVPComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.showForm = true;
     }, 300);
+  }
+
+  @HostListener("window:scroll", ["$event"])
+  onScroll($event: any): void {
+    let scrollHeight = $event.srcElement.scrollingElement.scrollTop;
+
+    console.log(scrollHeight);
+    if (scrollHeight > 400) {
+      this.upwardForm = true;
+    }
+    else {
+      this.upwardForm = false;
+    }
   }
 
   ngOnDestroy(): void {

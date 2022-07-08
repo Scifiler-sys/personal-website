@@ -2,7 +2,8 @@
     min-width: 300px;
     width: 50%;
     margin:auto;
-    margin-top: 20px;
+    margin-top: 300px;
+    margin-bottom: 40px;
     padding: 5%;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 20px;
@@ -11,6 +12,14 @@
     flex-direction: column;
     display: flex;
     justify-content: center;
+
+    transition: all 500ms;
+    opacity: 0.5;
+}
+
+.body-after {
+    margin-top: 20px;
+    opacity: 1;
 }
 
 .center {
