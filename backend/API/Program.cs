@@ -26,7 +26,7 @@ builder.Services.AddSwaggerGen();
 
 //Setting db connection environment
 //Comment this on deployment
-// Environment.SetEnvironmentVariable("DATABASE_URL", builder.Configuration.GetConnectionString("Reference2DB"), EnvironmentVariableTarget.Process);
+Environment.SetEnvironmentVariable("DATABASE_URL", builder.Configuration.GetConnectionString("Reference2DB"), EnvironmentVariableTarget.Process);
 
 //Setting up PostgreSQL connection
 URIParser urlParser = new URIParser(Environment.GetEnvironmentVariable("DATABASE_URL"));
