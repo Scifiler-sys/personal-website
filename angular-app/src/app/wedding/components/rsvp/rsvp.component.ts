@@ -17,6 +17,10 @@ export class RSVPComponent implements OnInit, OnDestroy {
   expandBody: boolean = false;
   //Will pull form upwards
   upwardForm: boolean = false;
+  //Will close form after submit
+  closeForm: boolean = false;
+  //Will show thank you form
+  thankYouForm: boolean = false;
   
   //Time till wedding
   day = 0;
@@ -47,13 +51,30 @@ export class RSVPComponent implements OnInit, OnDestroy {
   onScroll($event: any): void {
     let scrollHeight = $event.srcElement.scrollingElement.scrollTop;
 
-    console.log(scrollHeight);
     if (scrollHeight > 400) {
       this.upwardForm = true;
     }
     else {
       this.upwardForm = false;
     }
+  }
+
+  formHasBeenSubmittedHandler(submit: boolean){
+
+    this.closeForm = true;
+    //Scrolls you back to the top
+    setTimeout(() => {
+      for (let index = 1000; index > 450; index--) {
+        setTimeout(() => {
+          window.scroll({
+            top: index
+          })
+        }, 50);
+      }
+
+      document.querySelector(".body")?.remove();
+      this.thankYouForm = true;
+    }, 500);
   }
 
   ngOnDestroy(): void {

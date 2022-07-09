@@ -17,9 +17,10 @@ img {
     text-align: center;
 }
 
-#title {
+.title {
     position: absolute;
-    bottom: -5%;
+    bottom: 30%;
+    opacity: 0;
     z-index: 1;
     font-family: "Abril Fatface" !important;
     font-style: italic;
@@ -28,7 +29,12 @@ img {
     /* border: 10px blue solid; */
     font-size: 10vw;
 
-    animation: fadeInDown 1.5s;
+    transition: all 1.25s;
+}
+
+.title-after {
+    bottom: -5%;
+    opacity: 1;
 }
 
 @keyframes fadeInDown {

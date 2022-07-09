@@ -35,6 +35,9 @@ export class WeddingComponent implements OnInit {
     if (scrollHeight > 400) {
       this.showTitle = true;
     }
+    else {
+      this.showTitle = false;
+    }
   }
 
   imageLoaded(){

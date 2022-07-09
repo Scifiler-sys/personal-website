@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RSVP } from '../../models/RSVP';
 import { RsvpService } from '../../services/rsvp.service';
@@ -9,6 +9,9 @@ import { RsvpService } from '../../services/rsvp.service';
   styleUrls: ['./rsvp-form.component.css']
 })
 export class RsvpFormComponent implements OnInit {
+
+  //Emits to rsvp parent component to collapse and fade the rsvp
+  @Output() formSubmitted = new EventEmitter<boolean>();
 
   hasPlusOne: boolean = false;
   plusOneVisited: boolean = false;
@@ -107,11 +110,11 @@ export class RsvpFormComponent implements OnInit {
         })
       }
   
-      console.log(this.currentRSVP);
-  
       // this.service.sendRSVP(this.currentRSVP).subscribe((response) => {
       //   console.log(response);
       // });
+
+      this.formSubmitted.emit(true);
     }
 
   }
