@@ -10,13 +10,17 @@ import { RsvpService } from '../../services/rsvp.service';
 })
 export class RsvpFormComponent implements OnInit {
 
+  justTrue: boolean = true;
+
   //Emits to rsvp parent component to collapse and fade the rsvp
   @Output() formSubmitted = new EventEmitter<boolean>();
 
+  //Has submitted
+  hasSubmitted: boolean = false;
+  
+  //Controlling button css when clicked
   hasPlusOne: boolean = false;
   plusOneVisited: boolean = false;
-
-  //Controlling button css when clicked
   relationButton: boolean = true;
   relationButtonVisited: boolean = false;
   howYesButton: boolean = true;
@@ -94,6 +98,7 @@ export class RsvpFormComponent implements OnInit {
 
   submitEvent(rsvpForm: FormGroup) {
     if (rsvpForm.valid) {
+      this.hasSubmitted = true;
       this.currentRSVP.address = rsvpForm.value.address;
       this.currentRSVP.yourWish = rsvpForm.value.yourWish;
   
@@ -112,9 +117,9 @@ export class RsvpFormComponent implements OnInit {
   
       this.service.sendRSVP(this.currentRSVP).subscribe((response) => {
         console.log(response);
+        this.formSubmitted.emit(true);
       });
 
-      this.formSubmitted.emit(true);
     }
 
   }

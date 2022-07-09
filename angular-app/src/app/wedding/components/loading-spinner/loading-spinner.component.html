@@ -3,5 +3,6 @@
         <div class="lds-heart">
             <div></div>
         </div>
-        <p>{{percent}}%</p>
+        <p *ngIf="!showLoading">{{percent}}%</p>
+        <p *ngIf="showLoading">Loading...</p>
     </div>

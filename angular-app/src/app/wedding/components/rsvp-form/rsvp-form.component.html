@@ -48,6 +48,8 @@
         
         <input type="button" class="btn center" value="Submit" (click)="submitEvent(rsvpForm)">
 
+        <app-loading-spinner *ngIf="hasSubmitted" [loading]="justTrue"></app-loading-spinner>
+
         <!-- <div><label for="">Share how you know the couple, wish them well or some wisdom for the future!</label></div>
         <div><label for="">Any plus one?</label></div>
     
