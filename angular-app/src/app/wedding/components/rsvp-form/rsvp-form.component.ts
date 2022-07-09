@@ -110,9 +110,9 @@ export class RsvpFormComponent implements OnInit {
         })
       }
   
-      // this.service.sendRSVP(this.currentRSVP).subscribe((response) => {
-      //   console.log(response);
-      // });
+      this.service.sendRSVP(this.currentRSVP).subscribe((response) => {
+        console.log(response);
+      });
 
       this.formSubmitted.emit(true);
     }

@@ -25,6 +25,8 @@
 }
 
 .form {
+    font-size: inherit;
+
     border-color: rgb(211, 213, 214);
     border-style: solid;
     border-radius: 30px;
@@ -55,6 +57,7 @@
 
 .form:focus {
     outline-color: #7699D4;
+    border-color: #7699D4;
 }
 
 .fade-out-expand {

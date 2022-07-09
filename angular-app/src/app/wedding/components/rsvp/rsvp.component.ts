@@ -69,7 +69,7 @@ export class RSVPComponent implements OnInit, OnDestroy {
           window.scroll({
             top: index
           })
-        }, 50);
+        }, 100);
       }
 
       document.querySelector(".body")?.remove();
