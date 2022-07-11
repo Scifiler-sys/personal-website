@@ -1,37 +1,31 @@
-<div class="body">
+<div class="body" [ngClass]="{'expand':expandBody, 'body-after':upwardForm, 'body-submit':closeForm}">
     <div class="center">
         <h1>RSVP</h1> 
-        <h4>Add image here</h4>
         <p>Saturday, December 17, 2022</p>
         <p class="timer">{{day}} DAYS {{hrs}} HRS {{mins}} MINS {{sec}} SECS</p>
     </div>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.</p>
+    <p style="text-align: center;">
+        We are excited to have you on our special day to tie the knot! Please RSVP so that we know who is coming!<br>Thank you! ♥
+    </p>
 
     <div class="center">
-        <button class="btn">Send RSVP</button>
+        <button *ngIf="!showForm" class="btn" (click)="handleShowButton()" [ngClass]="{'fade-out':expandBody}">Start</button>
     </div>
 
-    <!-- Thinking of putting this on another component entirely -->
-    <!-- <form>
-        <div>
-            <label>1. Will you be attending at our wedding?</label>
-            <div class="form-control">
-                <input type="button" class="btn" value="Attending">
-                <input type="button" class="btn" value="Not Attending">
-            </div>
-        </div>
-        <div>
-            <label for="">Are you a friend or family of?</label>
-        </div>
-        <div><label for="">Share how you know the couple, wish them well or some wisdom for the future!</label></div>
-        <div><label for="">Any plus one?</label></div>
+    <div *ngIf="showForm" class="fade-in">
+        <!-- Thinking of putting this on another component entirely -->
+        <app-rsvp-form (formSubmitted)="formHasBeenSubmittedHandler($event)"></app-rsvp-form>
+    </div>
+    
+</div>
 
-        <h3>Confirmation to check and ready to submit the RSVP</h3>
-    </form> -->
+<div [ngClass]="thankYouForm ? 'ty ty-after' : 'ty'" class="center">
+    <img src="../../../../assets/Wedding/Thank_You.gif">
+    <p>If you were thinking of giving a gift to help us on our way,</p>
+    <p>a gift of cash towards our honeymoon, would really make our day!</p>
 
+    <a href="https://www.paypal.com/donate/?business=YDPLUGMZVLXYQ&no_recurring=1&item_name=Fund+our+future+honey+moon%21+Thank+you%21%21&currency_code=USD">
+        <button class="btn">Donate</button>
+    </a>
 </div>

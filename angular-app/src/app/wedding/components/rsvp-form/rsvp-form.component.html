@@ -1,0 +1,58 @@
+<form [formGroup]="rsvpForm">
+    <div class="form-main">
+        <div class="form-control">
+            <label>Your name</label>
+            <input type="text" class="form" placeholder="First Name" formControlName="guests1F">
+            <span *ngIf = "guests1F?.touched && guests1F?.errors?.['required']">First name is required</span>
+            <input type="text" class="form" placeholder="Last Name" formControlName="guests1L">
+            <span *ngIf = "guests1L?.touched && guests1L?.errors?.['required']">Last name is required</span>
+        </div>
+
+        <div class="form-control">
+            <label>Plus one?</label>
+            <input *ngIf="hasPlusOne" [ngClass]="!hasPlusOne ? 'fade-out': 'fade-in'" type="text" class="form" placeholder="First Name" formControlName="guest2F">
+            <!-- <span *ngIf = "guests2F?.touched && guests2F?.pristine">First name is required</span> -->
+            <input *ngIf="hasPlusOne" [ngClass]="!hasPlusOne ? 'fade-out': 'fade-in'" type="text" class="form" placeholder="Last Name" formControlName="guest2L">
+            <!-- <span *ngIf = "guests2L?.touched">Last name is required</span> -->
+
+            <input *ngIf="howYesButton" [ngClass]="hasPlusOne ? 'fade-out-expand': 'fade-in'" type="button" class="btn" value="Yes" (click)="plusOneHandler(true)">
+            <input type="button" class="btn" value="No" (click)="plusOneHandler(false)" [ngClass]="!hasPlusOne && plusOneVisited ? 'clicked' : ''">
+            <span *ngIf="!plusOneVisited">Select one of the buttons</span>
+        </div>
+
+        <div class="form-control">
+            <label>Will you be attending at our wedding?</label>
+            <input type="button" class="btn" value="Attending" (click)="attendHandler(true)" [ngClass]="this.currentRSVP.attending && yesButtonVisited ? 'clicked' : ''">
+            <input type="button" class="btn" value="Not Attending" (click)="attendHandler(false)" [ngClass]="!this.currentRSVP.attending && yesButtonVisited ? 'clicked' : ''">
+            <span *ngIf="!yesButtonVisited">Select one of the buttons</span>
+        </div>
+        
+        <div class="form-control">
+            <label>Are you a friend or family of?</label>
+            <input type="button" class="btn" value="Stephen" (click)="relationHandler(true)" [ngClass]="relationButton && relationButtonVisited ? 'clicked' : ''">
+            <input type="button" class="btn" value="Sigrid" (click)="relationHandler(false)" [ngClass]="!relationButton && relationButtonVisited ? 'clicked' : ''">
+            <span *ngIf="!relationButtonVisited">Select one of the buttons</span>
+        </div>
+
+        <div class="form-control">
+            <label>Share how you know the couple, wish them well or some wisdom for the future!</label>
+            <textarea cols="30" rows="10" class="form par" formControlName="yourWish"></textarea>
+        </div>
+
+        <div class="form-control">
+            <label>What is your mailing address?</label>
+            <span style="color: rgb(162, 164, 165);">To send wedding things such as 'Save The Date' card</span>
+            <textarea cols="30" rows="10" class="form par" formControlName="address" placeholder="Ex: 123 Example Street Dr. TX, 12345 "></textarea>
+            <span *ngIf = "address?.touched && address?.errors?.['required']">Mailing address is required</span>
+        </div>
+        
+        <input type="button" class="btn center" value="Submit" (click)="submitEvent(rsvpForm)">
+
+        <app-loading-spinner *ngIf="hasSubmitted" [loading]="justTrue"></app-loading-spinner>
+
+        <!-- <div><label for="">Share how you know the couple, wish them well or some wisdom for the future!</label></div>
+        <div><label for="">Any plus one?</label></div>
+    
+        <h3>Confirmation to check and ready to submit the RSVP</h3> -->
+    </div>
+</form>

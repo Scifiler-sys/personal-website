@@ -1,0 +1,91 @@
+.form-control {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    margin-block: 2rem;
+}
+
+.form-main {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-control > * {
+    margin: 0.5rem;
+}
+
+.form-control > label {
+    font-size: 1.5rem;
+}
+
+.form-control > span {
+    color: red;
+    font-size: 1rem;
+}
+
+.form {
+    font-size: inherit;
+
+    border-color: rgb(211, 213, 214);
+    border-style: solid;
+    border-radius: 30px;
+    border-width: 1px;
+
+    padding-block: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    -webkit-transition: all 300ms;
+}
+
+/* Short for paragraph */
+.par {
+    height: 120px;
+    border-radius: 10px;
+    resize: none;
+    font-size: inherit;
+    font-family: "Segoe UI";
+}
+
+.clicked{
+    /* #c3d4f3 */
+    background-color: #3B5E99;
+    border-color: #3B5E99;
+    transform: scale(1.1);
+}
+
+.form:focus {
+    outline-color: #7699D4;
+    border-color: #7699D4;
+}
+
+.fade-out-expand {
+    animation: fade-out 300ms;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        margin-bottom: -55px;
+    }
+}
+
+.expand {
+    /* 171 */
+    /* 237 */
+    animation: expand 300ms;
+}
+
+@keyframes expand {
+    from {
+        margin-bottom: inherit;
+    }
+    to {
+        margin-bottom: 66px
+    }
+}
