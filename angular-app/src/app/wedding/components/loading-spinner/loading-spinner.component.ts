@@ -8,6 +8,13 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 export class LoadingSpinnerComponent implements OnInit {
 
   private _total:number = 0;
+  showLoading:boolean = false;
+
+  @Input('loading')
+  set load(load:boolean){
+    this.showLoading = load;
+  }
+
   @Input('total')
   set total(total:number){
     this._total = total;

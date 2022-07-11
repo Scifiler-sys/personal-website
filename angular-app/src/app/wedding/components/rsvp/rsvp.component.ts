@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
@@ -10,6 +10,17 @@ export class RSVPComponent implements OnInit, OnDestroy {
 
   private sub?: Subscription;
   private weddingDate:Date = new Date("Dec 17 2022 00:00:00");
+
+  //Will show form after user clicks on button to start
+  showForm: boolean = false;
+  //Will expand downwards for form
+  expandBody: boolean = false;
+  //Will pull form upwards
+  upwardForm: boolean = false;
+  //Will close form after submit
+  closeForm: boolean = false;
+  //Will show thank you form
+  thankYouForm: boolean = false;
   
   //Time till wedding
   day = 0;
@@ -27,6 +38,44 @@ export class RSVPComponent implements OnInit, OnDestroy {
   }
 
   constructor() { }
+
+  handleShowButton(){
+    this.expandBody = true;
+
+    setTimeout(() => {
+      this.showForm = true;
+    }, 300);
+  }
+
+  @HostListener("window:scroll", ["$event"])
+  onScroll($event: any): void {
+    let scrollHeight = $event.srcElement.scrollingElement.scrollTop;
+
+    if (scrollHeight > 400) {
+      this.upwardForm = true;
+    }
+    else {
+      this.upwardForm = false;
+    }
+  }
+
+  formHasBeenSubmittedHandler(submit: boolean){
+
+    this.closeForm = true;
+    //Scrolls you back to the top
+    setTimeout(() => {
+      for (let index = 1000; index > 450; index--) {
+        setTimeout(() => {
+          window.scroll({
+            top: index
+          })
+        }, 100);
+      }
+
+      document.querySelector(".body")?.remove();
+      this.thankYouForm = true;
+    }, 500);
+  }
 
   ngOnDestroy(): void {
     this.sub?.unsubscribe();

@@ -14,6 +14,8 @@ export class WeddingComponent implements OnInit {
   isLoaded: boolean = true;
   //Counts how many images are loaded
   imageTotal: number = 0;
+  //Show title after hitting the end
+  showTitle: boolean = false;
 
   //Listens to scroll event and change image based on scroll
   @HostListener("window:scroll", ["$event"])
@@ -29,6 +31,13 @@ export class WeddingComponent implements OnInit {
       this.currentImage = Math.min(Math.max(1, Math.floor(scrollHeight / 100) + 1),6);
       // console.log(this.currentImage);
     }
+
+    if (scrollHeight > 400) {
+      this.showTitle = true;
+    }
+    else {
+      this.showTitle = false;
+    }
   }
 
   imageLoaded(){
@@ -36,6 +45,9 @@ export class WeddingComponent implements OnInit {
 
     if (this.imageTotal == 6) {
       this.isLoaded = false;
+      window.scroll({
+        top:0
+      });
     }
   }
 
