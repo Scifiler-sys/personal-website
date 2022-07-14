@@ -9,6 +9,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 import { ImageLoadedDirectiveDirective } from './components/directives/image-loaded-directive.directive';
 import { RsvpFormComponent } from './components/rsvp-form/rsvp-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WishFloatComponent } from './components/wish-float/wish-float.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RSVPComponent,
     LoadingSpinnerComponent,
     ImageLoadedDirectiveDirective,
-    RsvpFormComponent
+    RsvpFormComponent,
+    WishFloatComponent
   ],
   imports: [
     CommonModule,

@@ -22,11 +22,9 @@ img {
     bottom: 30%;
     opacity: 0;
     z-index: 1;
-    font-family: "Abril Fatface" !important;
-    font-style: italic;
+    font-family: 'Petit Formal Script', cursive;
     text-align: center;
     width: 100%;
-    /* border: 10px blue solid; */
     font-size: 10vw;
 
     transition: all 1.25s;
