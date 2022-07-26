@@ -7,11 +7,11 @@ import { WeddingComponent } from './wedding.component';
 const routes: Routes = [
   {
     path:"", 
-    component: WeddingComponent,
-    children: [
-      {path: "rsvp", component: RSVPComponent},
-      {path: "yourwishes", component: WishFloatComponent}
-    ]
+    component: WeddingComponent
+    // children: [
+    //   {path: "rsvp", component: RSVPComponent},
+    //   {path: "yourwishes", component: WishFloatComponent}
+    // ]
   },
 ];
 

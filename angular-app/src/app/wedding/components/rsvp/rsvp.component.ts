@@ -19,8 +19,8 @@ export class RSVPComponent implements OnInit, OnDestroy {
   upwardForm: boolean = false;
   //Will close form after submit
   closeForm: boolean = false;
-  //Will show thank you form
-  thankYouForm: boolean = false;
+  //Will show thank you form [DEPRECATED]
+  thankYouForm: boolean = true;
   
   //Time till wedding
   day = 0;
