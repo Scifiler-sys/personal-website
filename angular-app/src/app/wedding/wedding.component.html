@@ -1,17 +1,20 @@
 <app-loading-spinner *ngIf="isLoaded" [total]="imageTotal"></app-loading-spinner>
-<div [ngClass]="{'fixed':isFixed}" [ngStyle]="{'visibility':!isLoaded ? 'visible' : 'hidden'}">
-    <div *ngIf="!isFixed" style="height: 600px; width: auto;"></div>
-    <div (scroll)="onScroll($event)">
-        <div class="container">
-            <h1 [ngClass]="{'title-after': showTitle}" class="title">Sigrid & Stephen</h1>
-            <img src="../../assets//Wedding/001.JPEG" [ngStyle]="{display:currentImage == 1 ? 'block':'none'}" (loaded)="imageLoaded()">
-            <img src="../../assets//Wedding/002.JPEG" [ngStyle]="{display:currentImage == 2 ? 'block':'none'}" (loaded)="imageLoaded()">
-            <img src="../../assets//Wedding/003.JPEG" [ngStyle]="{display:currentImage == 3 ? 'block':'none'}" (loaded)="imageLoaded()">
-            <img src="../../assets//Wedding/004.JPEG" [ngStyle]="{display:currentImage == 4 ? 'block':'none'}" (loaded)="imageLoaded()">
-            <img src="../../assets//Wedding/005.JPEG" [ngStyle]="{display:currentImage == 5 ? 'block':'none'}" (loaded)="imageLoaded()">
-            <img src="../../assets//Wedding/006.JPEG" [ngStyle]="{display:currentImage == 6 ? 'block':'none'}" (loaded)="imageLoaded()">
+
+<div [ngStyle]="{'height': !isLoaded ? '4000px' : 'auto'}">
+    <div [ngClass]="{'fixed':isFixed}" [ngStyle]="{'visibility':!isLoaded ? 'visible' : 'hidden'}">
+        <div *ngIf="!isFixed" style="height: 600px; width: auto;"></div>
+        <div (scroll)="onScroll($event)">
+            <div class="container">
+                <h1 [ngClass]="{'title-after': showTitle}" class="title">Sigrid & Stephen</h1>
+                <img src="../../assets//Wedding/001.JPEG" [ngStyle]="{display:currentImage == 1 ? 'block':'none'}" (loaded)="imageLoaded()">
+                <img src="../../assets//Wedding/002.JPEG" [ngStyle]="{display:currentImage == 2 ? 'block':'none'}" (loaded)="imageLoaded()">
+                <img src="../../assets//Wedding/003.JPEG" [ngStyle]="{display:currentImage == 3 ? 'block':'none'}" (loaded)="imageLoaded()">
+                <img src="../../assets//Wedding/004.JPEG" [ngStyle]="{display:currentImage == 4 ? 'block':'none'}" (loaded)="imageLoaded()">
+                <img src="../../assets//Wedding/005.JPEG" [ngStyle]="{display:currentImage == 5 ? 'block':'none'}" (loaded)="imageLoaded()">
+                <img src="../../assets//Wedding/006.JPEG" [ngStyle]="{display:currentImage == 6 ? 'block':'none'}" (loaded)="imageLoaded()">
+            </div>
+            <app-rsvp></app-rsvp>
+            <router-outlet></router-outlet>
         </div>
-        <app-rsvp></app-rsvp>
-        <router-outlet></router-outlet>
     </div>
 </div>

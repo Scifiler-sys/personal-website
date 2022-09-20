@@ -39,14 +39,7 @@
     -webkit-transition: all 300ms;
 }
 
-/* Short for paragraph */
-.par {
-    height: 120px;
-    border-radius: 10px;
-    resize: none;
-    font-size: inherit;
-    font-family: "Segoe UI";
-}
+
 
 .clicked{
     /* #c3d4f3 */

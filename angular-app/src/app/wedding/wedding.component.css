@@ -46,3 +46,12 @@ img {
         transform: translate3d(0, 0, 0);
     }
 }
+
+/* Short for paragraph */
+.par {
+    height: 120px;
+    border-radius: 10px;
+    resize: none;
+    font-size: inherit;
+    font-family: "Segoe UI";
+}

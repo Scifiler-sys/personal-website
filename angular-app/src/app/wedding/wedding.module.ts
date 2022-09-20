@@ -10,6 +10,8 @@ import { ImageLoadedDirectiveDirective } from './components/directives/image-loa
 import { RsvpFormComponent } from './components/rsvp-form/rsvp-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WishFloatComponent } from './components/wish-float/wish-float.component';
+import { FloatingCardComponent } from './components/floating-card/floating-card.component';
+import { FloatingComponent } from './components/floating/floating.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { WishFloatComponent } from './components/wish-float/wish-float.component
     LoadingSpinnerComponent,
     ImageLoadedDirectiveDirective,
     RsvpFormComponent,
-    WishFloatComponent
+    WishFloatComponent,
+    FloatingCardComponent,
+    FloatingComponent
   ],
   imports: [
     CommonModule,
