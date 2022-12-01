@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { RSVP } from '../../models/RSVP';
 import { RsvpService } from '../../services/rsvp.service';
 
@@ -26,13 +26,13 @@ export class RsvpFormComponent implements OnInit {
   howYesButton: boolean = true;
   yesButtonVisited: boolean = false;
 
-  rsvpForm = new FormGroup({
-    guests1F: new FormControl('', Validators.required),
-    guests1L: new FormControl('', Validators.required),
-    guest2F: new FormControl(''),
-    guest2L: new FormControl(''),
-    yourWish: new FormControl(''),
-    address: new FormControl('', Validators.required)
+  rsvpForm = new UntypedFormGroup({
+    guests1F: new UntypedFormControl('', Validators.required),
+    guests1L: new UntypedFormControl('', Validators.required),
+    guest2F: new UntypedFormControl(''),
+    guest2L: new UntypedFormControl(''),
+    yourWish: new UntypedFormControl(''),
+    address: new UntypedFormControl('', Validators.required)
   });
 
   public get guests1F() {
@@ -96,7 +96,7 @@ export class RsvpFormComponent implements OnInit {
     }
   }
 
-  submitEvent(rsvpForm: FormGroup) {
+  submitEvent(rsvpForm: UntypedFormGroup) {
     if (rsvpForm.valid) {
       this.hasSubmitted = true;
       this.currentRSVP.address = rsvpForm.value.address;

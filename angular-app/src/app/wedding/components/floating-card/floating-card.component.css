@@ -12,6 +12,14 @@
     animation: bubble-up 25s linear, side-ways 2s ease-in-out alternate infinite;
 }
 
+.card-silver {
+    background-image: linear-gradient(
+        to bottom,
+        white,
+        #C0C0C0
+    );
+}
+
 .card-blue {
     background-image: linear-gradient(
         to bottom,
@@ -22,22 +30,15 @@
 
 .outline {
     position: relative;
-
-    /* border-width: 2px;
-    border-style: solid;
-    border-image: 
-    linear-gradient(
-      to bottom, 
-      #DCB975, 
-      #B68D55
-    ) 1; */
     width: 100%;
+    text-align: center;
 }
 
 .outline > h3 {
-    text-align: center;
+    
     font-family: 'Dancing Script', cursive;
     font-size: 2rem;
+    display:inline;
 }
 
 .outline > p {

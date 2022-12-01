@@ -1,9 +1,7 @@
 import { Guest } from "./Guest";
+import { Wish } from "./Wish";
 
-export interface RSVP {
-    attending?:boolean,
-    relation:string,
-    yourWish:string,
-    address?:string,
-    guests:Guest[]
+export interface RSVP extends Wish {
+    attending:boolean,
+    address:string
 }

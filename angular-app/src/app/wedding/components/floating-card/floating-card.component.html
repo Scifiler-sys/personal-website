@@ -4,11 +4,11 @@
 
 
 <div [style.marginLeft.px]="this.screenWidth">
-    <div class="card card-blue">
+    <div [class]="this.wish.relation=='sigrid' ? 'card card-silver' : 'card card-blue'">
         <div class="outline">
-            <h3>{{rsvps[0].guests[0].firstName}}</h3>
+            <h3>{{this.title}}</h3>
             <!-- <p>nothing</p> -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+            <p>{{wish.yourWish}}</p>
         </div>
     </div>
 </div>
