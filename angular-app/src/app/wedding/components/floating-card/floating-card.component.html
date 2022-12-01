@@ -2,10 +2,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
-<div class="card card-blue">
-    <div class="outline">
-        <h3>Stephen Pagdilao</h3>
-        <!-- <p>nothing</p> -->
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+
+<div [style.marginLeft.px]="this.screenWidth">
+    <div class="card card-blue">
+        <div class="outline">
+            <h3>{{rsvps[0].guests[0].firstName}}</h3>
+            <!-- <p>nothing</p> -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+        </div>
     </div>
 </div>

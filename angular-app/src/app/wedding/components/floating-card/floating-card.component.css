@@ -8,6 +8,8 @@
     /* background-color: white; */
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 20px;
     border-radius: 25px;
+
+    animation: bubble-up 25s linear, side-ways 2s ease-in-out alternate infinite;
 }
 
 .card-blue {
@@ -21,14 +23,14 @@
 .outline {
     position: relative;
 
-    border-width: 2px;
+    /* border-width: 2px;
     border-style: solid;
     border-image: 
     linear-gradient(
       to bottom, 
       #DCB975, 
       #B68D55
-    ) 1;
+    ) 1; */
     width: 100%;
 }
 
@@ -44,10 +46,20 @@
 
 @keyframes bubble-up {
     from {
-        
+        margin-top: 1000px;
     }
 
     to {
+        margin-top: -100%;
+    }
+}
 
+@keyframes side-ways {
+    from {
+        margin-left: 0px;
+    }
+
+    to {
+        margin-left: 50px;
     }
 }

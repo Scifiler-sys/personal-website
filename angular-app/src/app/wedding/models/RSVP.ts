@@ -1,9 +1,9 @@
 import { Guest } from "./Guest";
 
 export interface RSVP {
-    attending:boolean,
+    attending?:boolean,
     relation:string,
     yourWish:string,
-    address:string,
+    address?:string,
     guests:Guest[]
 }
